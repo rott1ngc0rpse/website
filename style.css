@@ -1,0 +1,179 @@
+:root {
+    --bg: #121212;
+    --text: #ffffff;
+    --card-bg: #1e1e1e;
+    --accent: #ff77b3;
+}
+
+body.light {
+    --bg: #ffffff;
+    --text: #000000;
+    --card-bg: #f4f4f4;
+    --accent: #007acc;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+#mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    color: var(--accent);
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    width: 90%;
+    padding-bottom: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pfp {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid var(--card-bg);
+    position: absolute;
+    top: 35px;
+    left: 15%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+}
+
+.heading {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 50px;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--accent);
+}
+
+.heading p {
+    font-size: 0.9rem;
+    margin: 4px 0 0;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.info, .description, .socials {
+    text-align: left;
+    padding: 0 20px;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+.info p {
+    margin: 8px 0;
+}
+
+.description {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    margin: 0 10px 0 0;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.socials i {
+    margin-right: 6px;
+}
+
+.source-link {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--text);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+    z-index: 20;
+}
+
+.source-link:hover {
+    opacity: 1;
+}
+
+.ripple {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(50%, -50%);
+}
+
+.ripple.active {
+    animation: rippleEffect 0.6s ease-out forwards;
+}
+
+@keyframes rippleEffect {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 3000px;
+        height: 3000px;
+        opacity: 0;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .card {
+      width: 450px;
+    }
+}
+
+/* waow, super secret! You're so cool.. Very based.. :3 */
